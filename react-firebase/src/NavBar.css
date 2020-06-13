@@ -1,0 +1,14 @@
+nav{
+    display:flex;
+    background-color: yellow;
+    align-items: center;
+    justify-content:right;
+    color:black;
+    min-height: 5vw;
+}
+
+.navlink{
+    padding: 5px;
+    text-decoration: none;
+    font-family: 'Stoke', serif;    
+}
