@@ -1,0 +1,16 @@
+.items
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    min-height: 20vw;
+    text-align: center;
+}
+
+.items > *
+{
+    background-color: lightgreen;
+    height: 400px;
+    max-width: 400px;
+    border-radius: 25px;
+    margin:20px auto 10px auto;
+}
