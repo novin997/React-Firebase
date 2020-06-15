@@ -1,6 +1,8 @@
 import React from 'react'
 import Item from "./Item";
+import Filter from "./Filter"
 import "./Shop.css";
+
 
 export default function Shop() {
     const items = [
@@ -27,12 +29,17 @@ export default function Shop() {
     ];
 
     return(
-        <div className="items">
-            {
-                items.map((item)=>
-                    <Item item={item} /> 
-                )            
-            } 
-        </div>    
+        <div className="shop">
+            <Filter />
+            <div className="itemsContainer">
+                <div className="items">
+                    {
+                        items.map((item)=>
+                            <Item item={item} /> 
+                        )            
+                    } 
+                </div>
+            </div>  
+        </div>     
     ) 
 }

@@ -1,7 +1,9 @@
 .items
 {
+    align-content: center;
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,minmax(0,1fr));
     min-height: 20vw;
     text-align: center;
 }
@@ -10,7 +12,24 @@
 {
     background-color: lightgreen;
     height: 400px;
-    max-width: 400px;
+    width: 85%;
     border-radius: 25px;
     margin:20px auto 10px auto;
+}
+
+.itemsContainer
+{
+    width: 80%;
+    display: flex;
+}
+
+.shop
+{
+    display:flex;
+}
+
+.filterContainer
+{
+    display:flex;
+    width:20%;
 }
