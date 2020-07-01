@@ -1,0 +1,19 @@
+.loginContainer{
+    margin: auto;
+    width:50%;
+}
+
+.loginContainer > * {
+    text-align: center;
+}
+
+form{
+    border: 1px solid black;
+    width: 50%;
+    margin:auto; 
+}
+
+form > * {
+    display: block;
+    margin:10px auto 10px auto;
+}
