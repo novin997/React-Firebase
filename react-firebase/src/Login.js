@@ -1,13 +1,31 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
+import firebase from "firebase";
+import "firebase/auth"
 import "./Login.css";
+import { useHistory } from 'react-router-dom';
+import {AdminContext} from "./App";
 
 export default function Login() {
+    const isAdmin = useContext(AdminContext);
+    console.log(isAdmin);
+
+    let history = useHistory();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     
     const logIn = (e) =>{
         e.preventDefault();
-        console.log(`${email} ${password}`);
+        const auth = firebase.auth();
+        auth.signInWithEmailAndPassword(email,password)
+        .then(()=>
+        {
+            console.log("You have successfully signed in.");
+            history.push("/Admin");
+        })
+        .catch((error)=>
+        {
+            console.log(error.message);
+        });
     }
 
     return (
