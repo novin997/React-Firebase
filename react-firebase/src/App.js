@@ -23,7 +23,7 @@ function App() {
                             <Route path="/Shop" exact component={Shop} />        
                             <Route path="/Contacts" exact component={Contacts} />
                             <Route path="/Login" exact component={Login} />
-                            <Route path="/Admin" exact component={Admin} />
+                            <Route path="/Admin" component={Admin} />
                     </Switch>
                 </AdminContext.Provider>
             </div>

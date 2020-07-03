@@ -8,6 +8,8 @@ import {AdminContext} from "./App";
 export default function Login() {
     const {isAdmin,setAdmin} = useContext(AdminContext);
 
+    console.log(isAdmin);
+
     let history = useHistory();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
