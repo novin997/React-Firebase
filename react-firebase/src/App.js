@@ -6,15 +6,18 @@ import Shop from "./Shop";
 import Login from "./Login";
 import Admin from "./Admin";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import { useState } from 'react';
 
 export const AdminContext = createContext();
 
 function App() {
+    const [isAdmin,setAdmin] = useState(false);
+    
     return (
         <Router>
             <div>
                 <NavBar />
-                <AdminContext.Provider value="false">
+                <AdminContext.Provider value = {{isAdmin,setAdmin}}>
                     <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/Shop" exact component={Shop} />        

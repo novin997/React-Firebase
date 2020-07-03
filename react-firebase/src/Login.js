@@ -6,8 +6,7 @@ import { useHistory } from 'react-router-dom';
 import {AdminContext} from "./App";
 
 export default function Login() {
-    const isAdmin = useContext(AdminContext);
-    console.log(isAdmin);
+    const {isAdmin,setAdmin} = useContext(AdminContext);
 
     let history = useHistory();
     const [email,setEmail] = useState("");
@@ -19,8 +18,11 @@ export default function Login() {
         auth.signInWithEmailAndPassword(email,password)
         .then(()=>
         {
+            if(email==="cocolupiayi@gmail.com")
+                setAdmin(true);
             console.log("You have successfully signed in.");
             history.push("/Admin");
+            
         })
         .catch((error)=>
         {
