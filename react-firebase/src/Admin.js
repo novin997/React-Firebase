@@ -5,9 +5,12 @@ import "./Admin.css";
 import AddProduct from "./Admin/AddProduct";
 import AdminDashboard from "./Admin/AdminDashboard";
 import { Route } from 'react-router-dom';
-
+import {dbContext} from "./index";
+ 
 export default function Admin() {
     const {isAdmin} = useContext(AdminContext);
+    const db = useContext(dbContext);
+    console.log(db);
 
     return (  
         <div>

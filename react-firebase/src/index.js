@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import "./index.css";
 import firebase from "firebase";
+import { createContext } from 'react';
 
 var config = {
     apiKey: "AIzaSyDb0vcIXSJJWONh-PtHQtfQYt9opK78uCU",
@@ -17,9 +18,15 @@ var config = {
 
 firebase.initializeApp(config);
 
+var db = firebase.firestore();
+
+export const dbContext = createContext(db);
+
 ReactDOM.render(
     <React.StrictMode>
-    <App />
+        <dbContext.Provider value={db}>
+            <App />
+        </dbContext.Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );
