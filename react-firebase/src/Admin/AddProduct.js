@@ -1,10 +1,11 @@
 import React,{useContext,useState} from 'react';
 import "./AddProduct.css";
 import {dbContext} from "../index";
+import { useHistory } from 'react-router-dom';
 
 export default function AddProduct() {
     const db = useContext(dbContext);
-    
+
     // Declare inputs in text box
     const[partType,setPartType] = useState("");
     const[brand,setBrand] = useState("");
@@ -13,6 +14,8 @@ export default function AddProduct() {
     const[price,setPrice] = useState("");
 
     const [message,setMessage] = useState("");
+
+    let history = useHistory();
 
     function addProduct(e){
         e.preventDefault();
@@ -36,6 +39,10 @@ export default function AddProduct() {
         setAmount("");
         setPrice("");
         console.log(`${partType} ${brand} ${name} ${amount} ${price}`);    
+    }
+
+    function gotoDashboard(){
+        history.push("/Admin");
     }
 
     return (
@@ -63,6 +70,7 @@ export default function AddProduct() {
                     <input value={price} onChange={e => {setPrice(e.target.value)}} type="text"/>
                 </div>
                 <button onClick={e => addProduct(e)}>Submit</button>
+                <button onClick={e => gotoDashboard(e)}>Return to Dashboard</button>
                 <div className="messageOutput">{message}</div>
             </form>
         </div>

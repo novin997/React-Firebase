@@ -1,0 +1,9 @@
+.adminOptions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminOptions button{
+    margin:10px;
+}
