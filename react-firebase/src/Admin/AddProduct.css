@@ -4,5 +4,20 @@ form{
 }
 
 .inputContainer{
-    width:60%;
+    width:50%;
+    display: flex;
+    align-items: center;
+}
+
+.inputContainer label{
+    width:30%;
+    text-align: center;
+}
+
+.inputContainer input{
+    width:40%;
+}
+
+.messageOutput{
+    text-align:center;
 }
