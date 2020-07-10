@@ -47,7 +47,7 @@ export default function AddProduct() {
 
     return (
         <div>
-            <form action="">
+            <form action="http://localhost:8080/uploadImage" method="post" encType="multipart/form-data" onSubmit={(e)=>addProduct(e)}>
                 <h3>Add a PC-Part to Database</h3>
                 <div className="inputContainer">
                     <label htmlFor="">Part Type</label>
@@ -69,7 +69,11 @@ export default function AddProduct() {
                     <label htmlFor="">Price</label>
                     <input value={price} onChange={e => {setPrice(e.target.value)}} type="text"/>
                 </div>
-                <button onClick={e => addProduct(e)}>Submit</button>
+                <div className="inputContainer">
+                    <label htmlFor="">Image</label>
+                    <input type="file" name="image" id="imageUpload"/>     
+                </div>
+                <input type="submit" value="Submit"/>
                 <button onClick={e => gotoDashboard(e)}>Return to Dashboard</button>
                 <div className="messageOutput">{message}</div>
             </form>
