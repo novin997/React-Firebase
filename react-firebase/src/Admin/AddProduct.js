@@ -19,6 +19,10 @@ export default function AddProduct() {
 
     function addProduct(e){
         e.preventDefault();
+        var formData = new FormData(e.target)
+        var req = new XMLHttpRequest();
+        req.open("POST","/uploadImage",true);
+        
         db.collection("PC-Parts").add({
             type: partType,
             brand: brand,
@@ -27,6 +31,8 @@ export default function AddProduct() {
             price: price
         })
         .then((ref)=>{
+            formData.append("refId",ref.id);
+            req.send(formData);
             console.log(`${ref.id} is written to database`);
             setMessage(`${brand} ${name} with stocks of ${amount} has been added to database`);
         })
