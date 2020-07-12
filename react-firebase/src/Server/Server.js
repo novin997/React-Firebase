@@ -21,7 +21,7 @@ app.post("/uploadImage", async (req,res)=>{
     let image = req.files.image;
     const name = req.body.refId;
 
-    image.mv(__dirname + "/Images/" + name,(error)=>
+    image.mv(__dirname + "/Images/" + name + ".jpg",(error)=>
     {
         if(error)
             return res.status(500).send(error);
